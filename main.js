@@ -2,54 +2,45 @@ const keysPad = document.querySelectorAll('.key');
 
 const display = document.querySelector('.display-numbers');
 
-const deleteAll = document.querySelector('.delete');
-const plus = document.querySelector('.plus').addEventListener('click', doSum);
+const deleteAll = document
+  .querySelector('.delete')
+  .addEventListener('click', deleteNumber);
+const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
 const multiply = document.querySelector('.multiply');
 const divide = document.querySelector('.divide');
 const dot = document.querySelector('.dot');
 const reset = document.querySelector('.reset');
 const equal = document.querySelector('.equal');
+const answer = document.querySelector('.answer');
 
-let allNumbers = '0';
-let firstNumber = '0';
-let secondNumber = '0';
+let allNumbers = '';
+let firstNumber = '';
+let secondNumber = '';
+let numberLength = '';
 let counter = 0;
+
+display.innerHTML = '0';
 
 keysPad.forEach((keypad) => {
   keypad.addEventListener('click', () => {
     allNumbers += keypad.innerText;
-    display.innerHTML = allNumbers.slice(1);
+    display.innerText = allNumbers;
+
+    if (keypad.innerText === 'RESET') {
+      display.innerText = '0';
+      allNumbers = '';
+    }
+
+    if (keypad.innerText === 'DEL') {
+      display.innerText = display.innerText.replaceAll('DEL', '');
+      allNumbers = allNumbers.replaceAll('DEL', '');
+    }
   });
 });
 
-function doSum() {
-  firstNumber = allNumbers;
-  console.log(firstNumber);
+function deleteNumber() {
+  if (allNumbers.length > 0) {
+    allNumbers = allNumbers.slice(0, -1);
+  }
 }
-
-// // console.log(allNumbers.slice(1));
-
-// if (
-//   !allNumbers.includes('+') ||
-//   !allNumbers.includes('-') ||
-//   !allNumbers.includes('x') ||
-//   !allNumbers.includes('/')
-// ) {
-//   firstNumber = allNumbers;
-// }
-
-// console.log(firstNumber);
-
-// if (
-//   firstNumber.includes('+') ||
-//   firstNumber.includes('-') ||
-//   firstNumber.includes('x') ||
-//   firstNumber.includes('/')
-// ) {
-//   //   display.innerHTML = firstNumber.slice(1);
-//   //   console.log(firstNumber.slice(1));
-
-//   secondNumber += keypad.innerHTML;
-//   //   console.log(secondNumber.slice(2));
-// }

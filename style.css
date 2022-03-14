@@ -82,18 +82,31 @@ body {
 
 .display-answer {
   background-color: hsl(224, 36%, 15%);
-  height: 5rem;
   border-radius: 10px;
   margin: 2rem 0;
+  padding: 1rem 0;
+  height: 69px;
 }
 
-.display-answer p {
+.display-numbers {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
   margin-right: 2rem;
   font-size: 2rem;
+}
+
+.answer {
+  opacity: 0.6;
+  font-size: 1.4rem;
+
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  margin-right: 2rem;
 }
 
 /* Calculator keyboard */
