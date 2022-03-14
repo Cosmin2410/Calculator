@@ -85,14 +85,13 @@ body {
   border-radius: 10px;
   margin: 2rem 0;
   padding: 1rem 0;
-  height: 69px;
+  height: 1-rem;
 }
 
 .display-numbers {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  height: 100%;
+  align-items: flex-start;
   margin-right: 2rem;
   font-size: 2rem;
 }
@@ -101,11 +100,10 @@ body {
   opacity: 0.6;
   font-size: 1.4rem;
 
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  height: 100%;
+  align-items: flex-start;
   margin-right: 2rem;
 }
 

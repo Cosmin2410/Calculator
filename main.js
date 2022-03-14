@@ -11,7 +11,9 @@ const multiply = document.querySelector('.multiply');
 const divide = document.querySelector('.divide');
 const dot = document.querySelector('.dot');
 const reset = document.querySelector('.reset');
-const equal = document.querySelector('.equal');
+const equal = document
+  .querySelector('.equal')
+  .addEventListener('click', doEqual);
 const answer = document.querySelector('.answer');
 
 let allNumbers = '';
@@ -30,11 +32,17 @@ keysPad.forEach((keypad) => {
     if (keypad.innerText === 'RESET') {
       display.innerText = '0';
       allNumbers = '';
+      answer.innerHTML = '=';
     }
 
     if (keypad.innerText === 'DEL') {
       display.innerText = display.innerText.replaceAll('DEL', '');
       allNumbers = allNumbers.replaceAll('DEL', '');
+    }
+
+    if (keypad.innerText === '=') {
+      display.innerText = display.innerText.replaceAll('=', '');
+      allNumbers = allNumbers.replaceAll('=', '');
     }
   });
 });
@@ -43,4 +51,8 @@ function deleteNumber() {
   if (allNumbers.length > 0) {
     allNumbers = allNumbers.slice(0, -1);
   }
+}
+
+function doEqual() {
+  answer.innerHTML = eval(allNumbers);
 }
