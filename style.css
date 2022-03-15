@@ -55,16 +55,17 @@ body {
 }
 
 .toggle-bettwen-button {
-  background-color: hsl(224, 36%, 15%);
+  background-color: hsl(223, 31%, 20%);
   border-radius: 20px;
   width: 4rem;
+  height: 1.2rem;
   margin: 0 auto;
   position: relative;
   cursor: pointer;
   color: black;
 }
 
-.toggle-bettwen-button::after {
+/* .toggle-bettwen-button::after {
   content: '';
   background-color: hsl(14, 98%, 53%);
   display: block;
@@ -72,10 +73,20 @@ body {
   width: 0.76rem;
   height: 0.76rem;
   border-radius: 50%;
-  top: 2.4px;
-  left: 3px; /* First position */
-  /* left: 1.6rem; Second position */
-  /* left: 3rem; Third position */
+  top: 3.4px; */
+/* left: 3px; First position */
+/* left: 1.6rem; Second position */
+/* left: 3rem; Third position */
+/* } */
+
+.ball {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: hsl(25, 98%, 40%);
+  position: absolute;
+  top: 3px;
+  left: 3px;
 }
 
 /* Calculator answer display */
@@ -145,7 +156,7 @@ body {
 
 .equal {
   grid-column: span 2;
-  background-color: hsl(14, 98%, 53%);
+  background-color: hsl(6, 63%, 50%);
   box-shadow: 0 4px hsl(6, 70%, 34%);
 }
 
